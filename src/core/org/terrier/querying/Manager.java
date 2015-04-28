@@ -28,12 +28,15 @@ package org.terrier.querying;
 import gnu.trove.TIntArrayList;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Properties;
+import java.util.Queue;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -43,6 +46,8 @@ import org.terrier.matching.MatchingQueryTerms;
 import org.terrier.matching.Model;
 import org.terrier.matching.QueryResultSet;
 import org.terrier.matching.ResultSet;
+import org.terrier.matching.daat.CandidateResult;
+import org.terrier.matching.daat.CandidateResultSet;
 import org.terrier.matching.dsms.BooleanScoreModifier;
 import org.terrier.matching.models.WeightingModel;
 import org.terrier.matching.models.WeightingModelFactory;
@@ -52,10 +57,17 @@ import org.terrier.querying.parser.QueryParser;
 import org.terrier.querying.parser.QueryParserException;
 import org.terrier.querying.parser.RequirementQuery;
 import org.terrier.querying.parser.SingleTermQuery;
+import org.terrier.querying.parser.TerrierFloatLexer;
+import org.terrier.querying.parser.TerrierLexer;
+import org.terrier.querying.parser.TerrierQueryParser;
 import org.terrier.structures.Index;
 import org.terrier.terms.BaseTermPipelineAccessor;
 import org.terrier.terms.TermPipelineAccessor;
 import org.terrier.utility.ApplicationSetup;
+
+import antlr.RecognitionException;
+import antlr.TokenStreamException;
+import antlr.TokenStreamSelector;
 /**
   * This class is responsible for handling/co-ordinating the main high-level
   * operations of a query. These are:
@@ -753,11 +765,48 @@ public class Manager
 			getPostProcessModule(lastPP).process(this, srq);
 		}
 		
-		/*Request r = (Request)srq;
-		r.setResultSet(new QueryResultSet(0));
-		srq = (SearchRequest)r;*/
-	
+		//diversifyResults(srq);
 		
+	}
+	
+	public void diversifyResults(SearchRequest initialSrq){
+		SearchRequest srq1 = newSearchRequest();
+		 //parse the query
+		 TerrierLexer lexer = new TerrierLexer(new StringReader("Obama"));
+		 TerrierFloatLexer flexer = new TerrierFloatLexer(lexer.getInputState());
+
+		 TokenStreamSelector selector = new TokenStreamSelector();
+		 selector.addInputStream(lexer, "main");
+		 selector.addInputStream(flexer, "numbers");
+		 selector.select("main");
+		 TerrierQueryParser parser = new TerrierQueryParser(selector);
+		 parser.setSelector(selector);
+
+		 try {
+			srq1.setQuery(parser.query());
+		} catch (RecognitionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TokenStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 //srq1.setQuery("Obama");
+		 
+		 runPreProcessing(srq1);
+		 runMatching(srq1);
+		 ArrayList<SearchRequest> subQueries =new ArrayList<SearchRequest>();
+		 subQueries.add(srq1);
+		 
+		 double[] subQueryRelevance = new double[subQueries.size()];
+		 for(int i=0;i<subQueryRelevance.length; i++){
+			 subQueryRelevance[i] = 1.0 / (double) subQueries.size();
+		 }
+		 
+		 int lambda = 10;
+		 double w = 1;
+		 
+		 diversifyResults(initialSrq, subQueries, subQueryRelevance, lambda ,w);
 	}
 	
 	/**
@@ -776,7 +825,10 @@ public class Manager
 		
 		
 		
-		ResultSet diversifiedResultSet = new FeaturedQueryResultSet(0);
+		ResultSet diversifiedResultSet;
+		int diversifiedDocumentCount = 0;
+		
+		Queue<CandidateResult> candidateDiversifiedResultList = new PriorityQueue<CandidateResult>();
 		
 		double[] initialScores = initialResultSet.getScores();
 		
@@ -786,7 +838,7 @@ public class Manager
 		}
 		
 		 
-		while(diversifiedResultSet.getResultSize() < lambda){
+		while(diversifiedDocumentCount < lambda){
 			double[] updatedScores = {0}; 
 			
 			for(int initialDocumentIndex=0; initialDocumentIndex < initialScores.length; initialDocumentIndex++){
@@ -817,9 +869,29 @@ public class Manager
 				queryMass[i] += getScoreForDocumentId(maxDocumentId , subQueries.get(i));
 			}
 			
-			/*initialResultSet.getm
-			diversifiedResultSet.a*/
+			
+			//Adding things to diversifiedResultSet
+			CandidateResult currentCandidate = new CandidateResult(maxDocumentId);
+			currentCandidate.updateScore(getScoreForDocumentId(maxDocumentId,(SearchRequest)initialResultSet));
+			candidateDiversifiedResultList.add(currentCandidate);
+			
+			
+			//To remove document from initialResultSet
+			TIntArrayList docatnumbers = new TIntArrayList();//list of resultset index numbers to keep
+			for(int initialDocumentIndex=0; initialDocumentIndex < initialResultSet.getExactResultSize(); initialDocumentIndex++){
+				
+				if(initialResultSet.getDocids()[initialDocumentIndex] != maxDocumentId){
+					docatnumbers.add(initialResultSet.getDocids()[initialDocumentIndex]);
+				}
+			}
+			
+			((Request)initialResultSet).setResultSet(initialResultSet.getResultSet(docatnumbers.toNativeArray()));
+			
+			diversifiedDocumentCount++;
 		}
+		
+		diversifiedResultSet = new CandidateResultSet(candidateDiversifiedResultList);
+		initialSrq = (SearchRequest)diversifiedResultSet;
 		
 	}
 	
