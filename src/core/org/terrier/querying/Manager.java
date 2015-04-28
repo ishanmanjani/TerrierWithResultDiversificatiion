@@ -765,7 +765,7 @@ public class Manager
 			getPostProcessModule(lastPP).process(this, srq);
 		}
 		
-		//diversifyResults(srq);
+		diversifyResults(srq);
 		
 	}
 	
@@ -886,9 +886,9 @@ public class Manager
 			// If there are no documents left in the initialResult set to operate on; 
 			if(initialResultSet.getResultSize()<=0) break;
 			
-			double[] updatedScores = {0}; 
+			double[] updatedScores = new double[initialResultSet.getResultSize()]; 
 			
-			for(int initialDocumentIndex=0; initialDocumentIndex < initialScores.length; initialDocumentIndex++){
+			for(int initialDocumentIndex=0; initialDocumentIndex < initialResultSet.getResultSize(); initialDocumentIndex++){
 				
 				updatedScores[initialDocumentIndex] = 0;
 				
@@ -927,10 +927,10 @@ public class Manager
 			
 			//To remove document from initialResultSet
 			TIntArrayList docatnumbers = new TIntArrayList();//list of resultset index numbers to keep
-			for(int initialDocumentIndex=0; initialDocumentIndex < initialResultSet.getExactResultSize(); initialDocumentIndex++){
+			for(int initialDocumentIndex=0; initialDocumentIndex < initialResultSet.getResultSize(); initialDocumentIndex++){
 				
 				if(initialResultSet.getDocids()[initialDocumentIndex] != maxDocumentId){
-					docatnumbers.add(initialResultSet.getDocids()[initialDocumentIndex]);
+					docatnumbers.add(initialDocumentIndex);
 				}
 			}
 			
