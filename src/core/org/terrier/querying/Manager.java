@@ -765,7 +765,7 @@ public class Manager
 			getPostProcessModule(lastPP).process(this, srq);
 		}
 		
-		diversifyResults(srq);
+		//diversifyResults(srq);
 		
 	}
 	
