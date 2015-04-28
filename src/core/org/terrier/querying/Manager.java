@@ -765,14 +765,38 @@ public class Manager
 			getPostProcessModule(lastPP).process(this, srq);
 		}
 		
-		//diversifyResults(srq);
+		diversifyResults(srq);
 		
 	}
 	
 	public void diversifyResults(SearchRequest initialSrq){
+		
+		String hardCodedQuery = "CERTRON CORP";
+		
+		Query q = null;
+		
+		try{
+			q = QueryParser.parseQuery(hardCodedQuery);
+		} catch (Exception e) {
+			//century kludge!
+			//remove everything except character and spaces, and retry
+			try {
+				q = QueryParser.parseQuery(hardCodedQuery.replaceAll("[^a-zA-Z0-9 ]", ""));
+			} catch (QueryParserException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}	
+		}
+		if (q == null)
+		{
+			logger.debug("Hard Coded query not working");
+			//give up
+			return;
+		}
+		
 		SearchRequest srq1 = newSearchRequest();
 		 //parse the query
-		 TerrierLexer lexer = new TerrierLexer(new StringReader("Obama"));
+		 TerrierLexer lexer = new TerrierLexer(new StringReader("CERTRON CORP"));
 		 TerrierFloatLexer flexer = new TerrierFloatLexer(lexer.getInputState());
 
 		 TokenStreamSelector selector = new TokenStreamSelector();
@@ -794,6 +818,7 @@ public class Manager
 		 //srq1.setQuery("Obama");
 		 
 		 runPreProcessing(srq1);
+		 System.out.println("Hi");
 		 runMatching(srq1);
 		 ArrayList<SearchRequest> subQueries =new ArrayList<SearchRequest>();
 		 subQueries.add(srq1);
@@ -818,9 +843,10 @@ public class Manager
 	 * @param w
 	 */
 	public void diversifyResults(SearchRequest initialSrq, ArrayList<SearchRequest> subQueries, double[] subQueryRelevance, int lambda,double w){
+		System.out.println("Here");
 		initialSrq.getQuery();
 		
-		ResultSet initialResultSet = initialSrq.getResultSet();
+		
 		
 		
 		
@@ -830,7 +856,7 @@ public class Manager
 		
 		Queue<CandidateResult> candidateDiversifiedResultList = new PriorityQueue<CandidateResult>();
 		
-		double[] initialScores = initialResultSet.getScores();
+		
 		
 		double[] queryMass = new double[subQueries.size()];
 		for(int i=0;i<queryMass.length; i++){
@@ -839,6 +865,14 @@ public class Manager
 		
 		 
 		while(diversifiedDocumentCount < lambda){
+			System.out.println("in while");
+			
+			ResultSet initialResultSet = initialSrq.getResultSet();
+			double[] initialScores = initialResultSet.getScores();
+			
+			// If there are no documents left in the initialResult set to operate on; 
+			if(initialResultSet.getResultSize()<=0) break;
+			
 			double[] updatedScores = {0}; 
 			
 			for(int initialDocumentIndex=0; initialDocumentIndex < initialScores.length; initialDocumentIndex++){
@@ -862,6 +896,7 @@ public class Manager
 					maxDocumentIndex = initialDocumentIndex;
 				}
 			}
+			System.out.println("Size is: " + initialResultSet.getResultSize() + "Max doc index is: " + maxDocumentIndex);
 			
 			int maxDocumentId = initialResultSet.getDocids()[maxDocumentIndex];
 			
@@ -872,7 +907,8 @@ public class Manager
 			
 			//Adding things to diversifiedResultSet
 			CandidateResult currentCandidate = new CandidateResult(maxDocumentId);
-			currentCandidate.updateScore(getScoreForDocumentId(maxDocumentId,(SearchRequest)initialResultSet));
+			//currentCandidate.updateScore(getScoreForDocumentId(maxDocumentId,(SearchRequest)initialResultSet));
+			currentCandidate.updateScore(getScoreForDocumentId(maxDocumentId,initialSrq));
 			candidateDiversifiedResultList.add(currentCandidate);
 			
 			
@@ -885,18 +921,24 @@ public class Manager
 				}
 			}
 			
-			((Request)initialResultSet).setResultSet(initialResultSet.getResultSet(docatnumbers.toNativeArray()));
+			//((Request)initialResultSet).setResultSet(initialResultSet.getResultSet(docatnumbers.toNativeArray()));
+			((Request)initialSrq).setResultSet(initialResultSet.getResultSet(docatnumbers.toNativeArray()));
 			
 			diversifiedDocumentCount++;
 		}
 		
 		diversifiedResultSet = new CandidateResultSet(candidateDiversifiedResultList);
-		initialSrq = (SearchRequest)diversifiedResultSet;
+		((Request)initialSrq).setResultSet(diversifiedResultSet);
 		
 	}
 	
 	private static double getScoreForDocumentId(int documentId, SearchRequest srq){
 		ResultSet rs= srq.getResultSet();
+		
+		if(rs==null){
+			return 0;
+		}
+		
 		int[] docIds = rs.getDocids();
 		double[] scores = rs.getScores();
 		
