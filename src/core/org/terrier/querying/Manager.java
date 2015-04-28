@@ -794,7 +794,17 @@ public class Manager
 			return;
 		}
 		
+		String mModel = ApplicationSetup.getProperty("desktop.matching","Matching");
+		String wModel = ApplicationSetup.getProperty("desktop.model", "PL2");
+		
 		SearchRequest srq1 = newSearchRequest();
+		srq1.setQuery(q);
+		srq1.addMatchingModel(mModel, wModel);
+		srq1.setControl("c", "1.0d");
+		runPreProcessing(srq1);
+		runMatching(srq1);
+		
+		/*SearchRequest srq1 = newSearchRequest();
 		 //parse the query
 		 TerrierLexer lexer = new TerrierLexer(new StringReader("CERTRON CORP"));
 		 TerrierFloatLexer flexer = new TerrierFloatLexer(lexer.getInputState());
@@ -819,7 +829,9 @@ public class Manager
 		 
 		 runPreProcessing(srq1);
 		 System.out.println("Hi");
-		 runMatching(srq1);
+		 runMatching(srq1);*/
+		
+		
 		 ArrayList<SearchRequest> subQueries =new ArrayList<SearchRequest>();
 		 subQueries.add(srq1);
 		 
