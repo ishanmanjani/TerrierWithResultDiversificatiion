@@ -765,7 +765,7 @@ public class Manager
 			getPostProcessModule(lastPP).process(this, srq);
 		}
 		
-		diversifyResults(srq);
+		//diversifyResults(srq);
 		
 	}
 	
@@ -799,7 +799,8 @@ public class Manager
 		
 		SearchRequest srq1 = newSearchRequest();
 		srq1.setQuery(q);
-		srq1.addMatchingModel(mModel, wModel);
+		//srq1.addMatchingModel( mModel, wModel);
+		srq1.addMatchingModel(((Request)initialSrq).getMatchingModel(),((Request)initialSrq).getWeightingModel()); 
 		srq1.setControl("c", "1.0d");
 		runPreProcessing(srq1);
 		runMatching(srq1);
