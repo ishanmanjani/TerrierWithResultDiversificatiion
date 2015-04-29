@@ -970,7 +970,7 @@ public class Manager
 	}
 	
 	private List<String> getAspectsForQuery(SearchRequest initialSrq){
-		1
+		
 		BasicXMLParser xmlParser1 = new BasicXMLParser();
 		
 		ResultSet rs = initialSrq.getResultSet();
