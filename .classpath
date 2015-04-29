@@ -75,5 +75,6 @@
 	<classpathentry kind="lib" path="/home/ishan/iiit/sem3/ap/workspace/Terrier/lib/crawler4j/tagsoup-1.2.1.jar"/>
 	<classpathentry kind="lib" path="/home/ishan/iiit/sem3/ap/workspace/Terrier/lib/crawler4j/tika-core-1.0.jar"/>
 	<classpathentry kind="lib" path="/home/ishan/iiit/sem3/ap/workspace/Terrier/lib/crawler4j/tika-parsers-1.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

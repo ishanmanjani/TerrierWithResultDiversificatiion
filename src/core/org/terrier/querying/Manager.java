@@ -765,13 +765,13 @@ public class Manager
 			getPostProcessModule(lastPP).process(this, srq);
 		}
 		
-		//diversifyResults(srq);
+		diversifyResults(srq);
 		
 	}
 	
 	public void diversifyResults(SearchRequest initialSrq){
 		
-		String hardCodedQuery = "CERTRON CORP";
+		String hardCodedQuery = "A MARKET WHERE CHEMICAL IS KING";
 		
 		Query q = null;
 		
