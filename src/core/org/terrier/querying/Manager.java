@@ -27,17 +27,20 @@
 package org.terrier.querying;
 import gnu.trove.TIntArrayList;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Properties;
 import java.util.Queue;
 import java.util.Set;
+import java.util.Vector;
 
 import org.apache.log4j.Logger;
 import org.terrier.learning.FeaturedQueryResultSet;
@@ -61,9 +64,12 @@ import org.terrier.querying.parser.TerrierFloatLexer;
 import org.terrier.querying.parser.TerrierLexer;
 import org.terrier.querying.parser.TerrierQueryParser;
 import org.terrier.structures.Index;
+import org.terrier.structures.MetaIndex;
 import org.terrier.terms.BaseTermPipelineAccessor;
 import org.terrier.terms.TermPipelineAccessor;
 import org.terrier.utility.ApplicationSetup;
+import org.terrier.utility.Rounding;
+
 
 import antlr.RecognitionException;
 import antlr.TokenStreamException;
@@ -962,6 +968,40 @@ public class Manager
 		}
 		return 0;
 	}
+	
+	private List<String> getAspectsForQuery(SearchRequest initialSrq){
+		1
+		BasicXMLParser xmlParser1 = new BasicXMLParser();
+		
+		ResultSet rs = initialSrq.getResultSet();
+		
+		MetaIndex meta = index.getMetaIndex();
+		
+		int ResultsSize = rs.getResultSize();
+		int[] docids = rs.getDocids();
+		
+		List<String> retrivedDocumentNames = new ArrayList<String>();
+		
+		for (int i = 0; i < Math.min(ResultsSize,5); i++) {
+			
+			String f;
+			try {
+				f = meta.getItem("filename", docids[i]);
+				retrivedDocumentNames.add(f);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		for(String filename: retrivedDocumentNames){
+			xmlParser.
+		}
+		
+		
+	}
+	
 	
 	
 	

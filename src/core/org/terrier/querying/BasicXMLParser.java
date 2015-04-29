@@ -1,3 +1,4 @@
+package org.terrier.querying;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.Writer;
@@ -16,7 +17,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 
 
-public class XMLParser {
+public class BasicXMLParser {
 	
 	private File getWorkingXML(File file){
 		
@@ -30,10 +31,14 @@ public class XMLParser {
 	        
 	        int i=0;
 	        while(sn.hasNext()){
-	        	if(i==1) continue;
 	        	String s = sn.nextLine();
+	        	if(i==1) {
+	        		i++;
+	        		continue;
+	        	}
 	        	writer.println(s);
 	        	i++;
+	        	//System.out.println(i+":  "+s);
 	        }
 	        
 	        
@@ -46,35 +51,50 @@ public class XMLParser {
 		finally{
 			sn.close();
 			writer.close();
-			return new File("temp.xml");
+			
 		}
-		 
+		
+		return new File("temp.xml");
 	}
+	
+	public List<String> getAspectsForXML(File file){
+		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+		
+		List<String> Aspects = null;
+		
+	    try {
+	        SAXParser saxParser = saxParserFactory.newSAXParser();
+	        MyHandler handler = new MyHandler();
+	       
+	        saxParser.parse(getWorkingXML(file), handler);
+	       
+	        Aspects = handler.getAspects();
+	        
+	        for(String aspect : Aspects){
+	        	System.out.println(aspect);
+	        }
+	       
+	    } 
+	    
+	    catch (Throwable e) {
+	        e.printStackTrace();
+	    }
+		
+	    
+	    return Aspects;
+}
+	
 	
 	public static void main(String[] args){
 		
-		    SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-		    try {
-		        SAXParser saxParser = saxParserFactory.newSAXParser();
-		        MyHandler handler = new MyHandler();
-		        
-		        File file = new File("/home/ishan/Webscope_L5/01/01/0000015.xml");
-		        
-		       
-		        
-		        
-		        saxParser.parse(new File("/home/ishan/Webscope_L5/01/01/0000015.xml"), handler);
-		       
-		        List<String> Aspects = handler.getAspects();
-		        
-		        for(String aspect : Aspects){
-		        	System.out.println(aspect);
-		        }
-		       
-		    } catch (Throwable e) {
-		        e.printStackTrace();
-		    }
+		BasicXMLParser xMLParser = new BasicXMLParser();
+		
+		File file = new File("/home/ishan/Webscope_L5/01/31/0008658.xml");
+		
+		xMLParser.getAspectsForXML(file);
 	}
+		
+		    
 }
 	 
 
@@ -91,7 +111,7 @@ class MyHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     	
-    	System.out.println("Hey");
+ //   	System.out.println("Hey");
  
         if (qName.equalsIgnoreCase("classifier")) {
         	isClassifier = true;
@@ -109,7 +129,7 @@ class MyHandler extends DefaultHandler {
  
     @Override
     public void characters(char ch[], int start, int length) throws SAXException {
-    	System.out.println("inchar");
+    	//System.out.println("inchar");
         if(isClassifier){
         	String aspect = new String(ch, start, length);
         	Aspects.add(aspect.trim().toLowerCase());
