@@ -781,7 +781,7 @@ public class Manager
 		
 		//String hardCodedQuery = "A MARKET WHERE CHEMICAL IS KING";
 		
-		List<String> Aspects = new ArrayList(getAspectsForQuery(initialSrq));
+		List<String> Aspects = new ArrayList<String>(getAspectsForQuery(initialSrq));
 		
 	
 		
