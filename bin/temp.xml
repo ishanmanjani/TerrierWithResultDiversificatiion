@@ -1,79 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nitf change.date="June 10, 2005" change.time="19:30" version="-//IPTC//DTD NITF 3.3//EN">
   <head>
-    <title>INFIGHTING HURTS TAMILS' CAUSE IN INDIA</title>
-    <meta content="11" name="publication_day_of_month"/>
+    <title>Revelstoke Stores</title>
+    <meta content="3" name="publication_day_of_month"/>
     <meta content="1" name="publication_month"/>
     <meta content="1987" name="publication_year"/>
-    <meta content="Sunday" name="publication_day_of_week"/>
-    <meta content="Foreign Desk" name="dsk"/>
-    <meta content="3" name="print_page_number"/>
+    <meta content="Saturday" name="publication_day_of_week"/>
+    <meta content="Financial Desk" name="dsk"/>
+    <meta content="30" name="print_page_number"/>
     <meta content="1" name="print_section"/>
-    <meta content="4" name="print_column"/>
-    <meta content="World" name="online_sections"/>
+    <meta content="5" name="print_column"/>
+    <meta content="Business" name="online_sections"/>
     <docdata>
-      <doc-id id-string="2455"/>
+      <doc-id id-string="563"/>
       <doc.copyright holder="The New York Times" year="1987"/>
+      <series series.name="COMPANY NEWS"/>
       <identified-content>
-        <classifier class="indexing_service" type="descriptor">CIVIL WAR AND GUERRILLA WARFARE</classifier>
-        <classifier class="indexing_service" type="descriptor">INTERNATIONAL RELATIONS</classifier>
-        <classifier class="indexing_service" type="descriptor">TAMILS (ETHNIC GROUP)</classifier>
-        <location class="indexing_service">SRI LANKA, REPUBLIC OF</location>
-        <location class="indexing_service">INDIA</location>
-        <person class="indexing_service">WEISMAN, STEVEN R</person>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News/World/Countries and Territories/India</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News/World/Countries and Territories/Sri Lanka</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News/World</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News/World/Asia Pacific</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/Features/Travel/Guides/Destinations/Asia</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/Features/Travel/Guides/Destinations/Asia/India</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/Features/Travel/Guides/Destinations/Asia/Sri Lanka</classifier>
-        <classifier class="online_producer" type="general_descriptor">Civil War and Guerrilla Warfare</classifier>
-        <classifier class="online_producer" type="general_descriptor">International Relations</classifier>
-        <classifier class="online_producer" type="general_descriptor">War and Revolution</classifier>
-        <classifier class="online_producer" type="general_descriptor">Culture</classifier>
-        <classifier class="online_producer" type="general_descriptor">Politics and Government</classifier>
+        <classifier class="indexing_service" type="descriptor">MERGERS, ACQUISITIONS AND DIVESTITURES</classifier>
+        <org class="indexing_service">REVELSTOKE COMPANIES LTD</org>
+        <org class="indexing_service">HOME HARDWARE STORES LTD</org>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Business</classifier>
+        <classifier class="online_producer" type="general_descriptor">Mergers, Acquisitions and Divestitures</classifier>
+        <classifier class="online_producer" type="general_descriptor">Finances</classifier>
       </identified-content>
     </docdata>
-    <pubdata date.publication="19870111T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9B0DEFDC1539F932A25752C0A961948260" item-length="667" name="The New York Times" unit-of-measure="word"/>
+    <pubdata date.publication="19870103T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9B0DE3DF1538F930A35752C0A961948260" item-length="83" name="The New York Times" unit-of-measure="word"/>
   </head>
   <body>
     <body.head>
       <hedline>
-        <hl1>INFIGHTING HURTS TAMILS' CAUSE IN INDIA</hl1>
+        <hl1>Revelstoke Stores</hl1>
       </hedline>
-      <byline class="print_byline">By STEVEN R. WEISMAN, Special to the New York Times</byline>
-      <byline class="normalized_byline">WEISMAN, STEVEN R</byline>
-      <dateline>MADRAS, India, Jan. 10</dateline>
+      <byline class="print_byline">Reuters</byline>
+      <dateline>CALGARY, Alberta, Jan. 2</dateline>
     </body.head>
     <body.content>
       <block class="lead_paragraph">
-        <p>LEAD: In a major development in the Sri Lankan civil war, infighting among rival Tamil rebel groups has begun to anger India and damage the guerrillas' reputation in the eyes of sympathizers.</p>
+        <p>LEAD: The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said.</p>
       </block>
       <block class="full_text">
-        <p>LEAD: In a major development in the Sri Lankan civil war, infighting among rival Tamil rebel groups has begun to anger India and damage the guerrillas' reputation in the eyes of sympathizers.</p>
-        <p>In a major development in the Sri Lankan civil war, infighting among rival Tamil rebel groups has begun to anger India and damage the guerrillas' reputation in the eyes of sympathizers.</p>
-        <p>The Indian authorities are also increasingly linking members of the guerrilla organizations to recent bombings, shootings, drug-trafficking incidents and other problems in southeastern India.</p>
-        <p>As a result, there are widespread signs that for the first time Indians in the south are developing misgivings about allowing Tamil guerrillas to use their area as a sanctuary, training center, arms-supply point and political base for their insurgency.</p>
-        <p>''There was a wave of sympathy for them once,'' said Murasoli Maran, a longtime member of Parliament from Madras. ''It is slowly waning now.'' A Cooler Atmosphere</p>
-        <p>Politicians say that the 50 million Indian Tamils who live in the south generally sympathize with Tamils in Sri Lanka and that these sentiments would dominate if the Sri Lankan Army tried to wipe out the insurgency.</p>
-        <p>But even some of the 150,000 civilian refugees from Sri Lanka, many of whom live in camps along the Indian coast, say they detect a cooler atmosphere among their fellow Tamils here.</p>
-        <p>''When we came, we had support from the people,'' said one of the refugees, Arul Simeon, a 44-year-old fisherman. ''Now people are jealous of what we are getting from the Government. Somebody plants a bomb somewhere, and they think we planted it.''</p>
-        <p>The new problems faced by the Tamil guerrillas have received less notice than their recent gains.</p>
-        <p>The Tamil insurgency sprouted early in the decade as a protest against discrimination in jobs, education and economic development by the Sri Lankan Government, which is dominated by the Sinhalese majority.</p>
-        <p>Thousands of people have been killed in clashes since 1983 as the guerrillas fought for a separate state to be known as Tamil Eelam. Atrocities against civilians committed by each side have polarized the island.</p>
-        <p>Since the end of 1985, rebel groups have controlled most of the north and much of the eastern part of the island.</p>
-        <p>A new phase of the war appeared to open this week as the Liberation Tigers of Tamil Eelam, the leading militant group, adopted a traffic police system and other civil administrative steps in the northern Jaffna Peninsula to demonstrate its control.</p>
-        <p>The Government responded with air strikes and an embargo on fuel oil and gasoline to the peninsula, raising new talk of another violent confrontation. Stirred Much Hatred</p>
-        <p>The tactics of the Liberation Tigers have stirred much hatred, with other militants accusing them of collusion with the Government. They cite comments by the Tigers leader favoring a one-party state in the new nation.</p>
-        <p>In response, Tiger leaders say they have moved against the others because they espouse a doctrinaire Marxism and have begun to prey on Tamil civilians by carrying out kidnappings and extortion operations.</p>
-        <p>In interviews, officials with four guerrilla organizations acknowledged that the infighting and the involvement of at least some Tamil militants in criminal activities in India had damaged their cause.</p>
-        <p>Since mid-1985, India has been trying to mediate a negotiated settlement to the Sri Lankan war. Indian leaders generally criticize the Sri Lankan President, J. R. Jayewardene, for withdrawing some of the key concessions he had made in the course of the talks.</p>
-        <p>But the officials also say they have become irritated that the guerrilla leaders have shown little flexibility in part because of their internal rivalries.</p>
-        <p>Indian irritation culminated in November after a shooting incident involving Tamil militants in Madras provoked a police crackown.</p>
-        <p>To the surprise of many, most citizens' groups and newspapers supported the police action, showing little sympathy for those arrested.</p>
-        <p>Some guerrilla officials said that they felt it was only a matter of time before India moved to expel them, and that accordingly they had reduced their operations here.</p>
+        <p>LEAD: The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said.</p>
+        <p>The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said. It said that it would expand its chain of 18 urban-related home improvement stores into other Canadian metropolitan markets.</p>
+        <p>COMPANY NEWS</p>
       </block>
     </body.content>
   </body>
