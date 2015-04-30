@@ -1,0 +1,15 @@
+/BitPostingIndex.class
+/BitPostingIndexInputStream.class
+/BlockDirectIndex.class
+/BlockDirectIndexInputStream.class
+/BlockDirectInvertedOutputStream.class
+/BlockFieldDirectInvertedOutputStream.class
+/BlockInvertedIndex.class
+/BlockInvertedIndexInputStream.class
+/DirectIndex.class
+/DirectIndexInputStream.class
+/DirectInvertedDocidOnlyOuptutStream.class
+/DirectInvertedOutputStream.class
+/FieldDirectInvertedOutputStream.class
+/InvertedIndex.class
+/InvertedIndexInputStream.class

@@ -1,0 +1,11 @@
+/BasicIndexer$BasicTermProcessor.class
+/BasicIndexer$FieldTermProcessor.class
+/BasicIndexer.class
+/BlockIndexer$BasicTermProcessor.class
+/BlockIndexer$DelimFieldTermProcessor.class
+/BlockIndexer$DelimTermProcessor.class
+/BlockIndexer$FieldTermProcessor.class
+/BlockIndexer.class
+/BlockInvertedIndexBuilder.class
+/InvertedIndexBuilder$IntLongTuple.class
+/InvertedIndexBuilder.class

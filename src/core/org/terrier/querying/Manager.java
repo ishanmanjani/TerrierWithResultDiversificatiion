@@ -777,70 +777,52 @@ public class Manager
 	
 	public void diversifyResults(SearchRequest initialSrq){
 		
-		String hardCodedQuery = "A MARKET WHERE CHEMICAL IS KING";
+		ArrayList<SearchRequest> subQueries =new ArrayList<SearchRequest>();
 		
-		Query q = null;
+		//String hardCodedQuery = "A MARKET WHERE CHEMICAL IS KING";
 		
-		try{
-			q = QueryParser.parseQuery(hardCodedQuery);
-		} catch (Exception e) {
-			//century kludge!
-			//remove everything except character and spaces, and retry
-			try {
-				q = QueryParser.parseQuery(hardCodedQuery.replaceAll("[^a-zA-Z0-9 ]", ""));
-			} catch (QueryParserException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}	
+		List<String> Aspects = new ArrayList(getAspectsForQuery(initialSrq));
+		
+	
+		
+		for(int i=0;i< Math.min(5, Aspects.size()); i++){
+			String subQuery = Aspects.get(i);
+			System.out.println(subQuery);
+			Query q = null;
+			
+			try{
+				q = QueryParser.parseQuery(subQuery);
+			} catch (Exception e) {
+				//century kludge!
+				//remove everything except character and spaces, and retry
+				try {
+					q = QueryParser.parseQuery(subQuery.replaceAll("[^a-zA-Z0-9 ]", ""));
+				} catch (QueryParserException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
+			}
+			if (q == null)
+			{
+				logger.debug("SubQueries not working");
+				//give up
+				return;
+			}
+			
+			String mModel = ApplicationSetup.getProperty("desktop.matching","Matching");
+			String wModel = ApplicationSetup.getProperty("desktop.model", "PL2");
+			
+			SearchRequest srq1 = newSearchRequest();
+			srq1.setQuery(q);
+			//srq1.addMatchingModel( mModel, wModel);
+			srq1.addMatchingModel(((Request)initialSrq).getMatchingModel(),((Request)initialSrq).getWeightingModel()); 
+			srq1.setControl("c", "1.0d");
+			runPreProcessing(srq1);
+			runMatching(srq1);
+			subQueries.add(srq1);
 		}
-		if (q == null)
-		{
-			logger.debug("Hard Coded query not working");
-			//give up
-			return;
-		}
-		
-		String mModel = ApplicationSetup.getProperty("desktop.matching","Matching");
-		String wModel = ApplicationSetup.getProperty("desktop.model", "PL2");
-		
-		SearchRequest srq1 = newSearchRequest();
-		srq1.setQuery(q);
-		//srq1.addMatchingModel( mModel, wModel);
-		srq1.addMatchingModel(((Request)initialSrq).getMatchingModel(),((Request)initialSrq).getWeightingModel()); 
-		srq1.setControl("c", "1.0d");
-		runPreProcessing(srq1);
-		runMatching(srq1);
-		
-		/*SearchRequest srq1 = newSearchRequest();
-		 //parse the query
-		 TerrierLexer lexer = new TerrierLexer(new StringReader("CERTRON CORP"));
-		 TerrierFloatLexer flexer = new TerrierFloatLexer(lexer.getInputState());
-
-		 TokenStreamSelector selector = new TokenStreamSelector();
-		 selector.addInputStream(lexer, "main");
-		 selector.addInputStream(flexer, "numbers");
-		 selector.select("main");
-		 TerrierQueryParser parser = new TerrierQueryParser(selector);
-		 parser.setSelector(selector);
-
-		 try {
-			srq1.setQuery(parser.query());
-		} catch (RecognitionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (TokenStreamException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 //srq1.setQuery("Obama");
-		 
-		 runPreProcessing(srq1);
-		 System.out.println("Hi");
-		 runMatching(srq1);*/
 		
 		
-		 ArrayList<SearchRequest> subQueries =new ArrayList<SearchRequest>();
-		 subQueries.add(srq1);
 		 
 		 double[] subQueryRelevance = new double[subQueries.size()];
 		 for(int i=0;i<subQueryRelevance.length; i++){
@@ -848,7 +830,7 @@ public class Manager
 		 }
 		 
 		 int lambda = 10;
-		 double w = 1;
+		 double w = 0.5;
 		 
 		 diversifyResults(initialSrq, subQueries, subQueryRelevance, lambda ,w);
 	}
@@ -862,13 +844,8 @@ public class Manager
 	 * @param w
 	 */
 	public void diversifyResults(SearchRequest initialSrq, ArrayList<SearchRequest> subQueries, double[] subQueryRelevance, int lambda,double w){
-		System.out.println("Here");
+		
 		initialSrq.getQuery();
-		
-		
-		
-		
-		
 		
 		ResultSet diversifiedResultSet;
 		int diversifiedDocumentCount = 0;
@@ -884,7 +861,7 @@ public class Manager
 		
 		 
 		while(diversifiedDocumentCount < lambda){
-			System.out.println("in while");
+			//System.out.println("in while");
 			
 			ResultSet initialResultSet = initialSrq.getResultSet();
 			double[] initialScores = initialResultSet.getScores();
@@ -915,7 +892,7 @@ public class Manager
 					maxDocumentIndex = initialDocumentIndex;
 				}
 			}
-			System.out.println("Size is: " + initialResultSet.getResultSize() + "Max doc index is: " + maxDocumentIndex);
+			//System.out.println("Size is: " + initialResultSet.getResultSize() + "Max doc index is: " + maxDocumentIndex);
 			
 			int maxDocumentId = initialResultSet.getDocids()[maxDocumentIndex];
 			
@@ -969,8 +946,8 @@ public class Manager
 		return 0;
 	}
 	
-	private List<String> getAspectsForQuery(SearchRequest initialSrq){
-		1
+	private HashSet<String> getAspectsForQuery(SearchRequest initialSrq){
+		
 		BasicXMLParser xmlParser1 = new BasicXMLParser();
 		
 		ResultSet rs = initialSrq.getResultSet();
@@ -987,6 +964,7 @@ public class Manager
 			String f;
 			try {
 				f = meta.getItem("filename", docids[i]);
+				System.out.println(f);
 				retrivedDocumentNames.add(f);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -995,11 +973,18 @@ public class Manager
 			
 		}
 		
+		HashSet<String> Aspects = new HashSet<String>();
+		
 		for(String filename: retrivedDocumentNames){
-			xmlParser.
+			List<String> aspectsForCurrDoc = xmlParser1.getAspectsForXML(new File(filename));
+			Aspects.addAll(aspectsForCurrDoc);
 		}
 		
+		/*for(String a:Aspects){
+			System.out.println(a);
+		}*/
 		
+		return Aspects;
 	}
 	
 	

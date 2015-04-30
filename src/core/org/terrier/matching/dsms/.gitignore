@@ -1,0 +1,9 @@
+/BooleanFallback.class
+/BooleanScoreModifier.class
+/DFRDependenceScoreModifier.class
+/DependenceScoreModifier.class
+/DocumentScoreModifier.class
+/MRFDependenceScoreModifier.class
+/PhraseScoreModifier.class
+/ResetScores.class
+/SimpleStaticScoreModifier.class

@@ -70,9 +70,9 @@ public class BasicXMLParser {
 	       
 	        Aspects = handler.getAspects();
 	        
-	        for(String aspect : Aspects){
+	       /* for(String aspect : Aspects){
 	        	System.out.println(aspect);
-	        }
+	        }*/
 	       
 	    } 
 	    
@@ -132,7 +132,10 @@ class MyHandler extends DefaultHandler {
     	//System.out.println("inchar");
         if(isClassifier){
         	String aspect = new String(ch, start, length);
-        	Aspects.add(aspect.trim().toLowerCase());
+        	if(!aspect.contains("/")){
+        		Aspects.add(aspect.trim().toLowerCase());
+        	}
+        	
         }
     }
 }
