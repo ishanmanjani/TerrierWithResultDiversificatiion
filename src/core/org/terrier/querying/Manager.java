@@ -946,7 +946,11 @@ public class Manager
 		return 0;
 	}
 	
+<<<<<<< HEAD
 	private HashSet<String> getAspectsForQuery(SearchRequest initialSrq){
+=======
+	private List<String> getAspectsForQuery(SearchRequest initialSrq){
+>>>>>>> e71a47538fa71c96e6b789d17071257f6abbd969
 		
 		BasicXMLParser xmlParser1 = new BasicXMLParser();
 		
