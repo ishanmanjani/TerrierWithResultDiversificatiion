@@ -1,115 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nitf change.date="June 10, 2005" change.time="19:30" version="-//IPTC//DTD NITF 3.3//EN">
   <head>
-<<<<<<< HEAD
-    <title>U.S. Official Sees Opening for Revival of Trade Talks</title>
-    <meta content="13trade" name="slug"/>
-    <meta content="13" name="publication_day_of_month"/>
-    <meta content="1" name="publication_month"/>
+    <title>They Sacrifice. We Go Shopping.</title>
+    <meta content="l07herbert" name="slug"/>
+    <meta content="7" name="publication_day_of_month"/>
+    <meta content="5" name="publication_month"/>
     <meta content="2007" name="publication_year"/>
-    <meta content="Saturday" name="publication_day_of_week"/>
-    <meta content="Business/Financial Desk" name="dsk"/>
-    <meta content="9" name="print_page_number"/>
-    <meta content="C" name="print_section"/>
-    <meta content="1" name="print_column"/>
-    <meta content="Business" name="online_sections"/>
-    <meta content="CORRECTION APPENDED" name="banner"/>
-    <meta content="20070118T000000" name="correction_date"/>
+    <meta content="Monday" name="publication_day_of_week"/>
+    <meta content="Editorial Desk" name="dsk"/>
+    <meta content="20" name="print_page_number"/>
+    <meta content="A" name="print_section"/>
+    <meta content="4" name="print_column"/>
+    <meta content="Opinion" name="online_sections"/>
     <docdata>
-      <doc-id id-string="1818461"/>
+      <doc-id id-string="1845730"/>
       <doc.copyright holder="The New York Times" year="2007"/>
       <identified-content>
-        <classifier class="indexing_service" type="descriptor">International Trade and World Market</classifier>
-        <location class="indexing_service">Europe</location>
-        <org class="indexing_service">World Trade Organization</org>
-        <org class="indexing_service">European Union</org>
-        <person class="indexing_service">Schwab, Susan C</person>
-        <person class="indexing_service">Lamy, Pascal</person>
-        <person class="indexing_service">Mandelson, Peter</person>
-        <person class="indexing_service">Zarocostas, John</person>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Business</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News/World/Europe</classifier>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/Features/Travel/Guides/Destinations/Europe</classifier>
-        <classifier class="online_producer" type="general_descriptor">International Trade and World Market</classifier>
+        <classifier class="indexing_service" type="descriptor">United States Armament and Defense</classifier>
+        <classifier class="indexing_service" type="descriptor">United States International Relations</classifier>
+        <classifier class="indexing_service" type="descriptor">Veterans</classifier>
+        <classifier class="indexing_service" type="descriptor">Public Opinion</classifier>
+        <classifier class="indexing_service" type="descriptor">Books and Literature</classifier>
+        <classifier class="indexing_service" type="descriptor">Terrorism</classifier>
+        <location class="indexing_service">Iraq</location>
+        <org class="indexing_service">Iraq and Afghanistan Veterans of America</org>
+        <person class="indexing_service">Delorenzo, Bill</person>
+        <person class="indexing_service">Hamilton, Lisa</person>
+        <person class="indexing_service">Gilbert, Barbara B</person>
+        <person class="indexing_service">Little, Martha G</person>
+        <person class="indexing_service">Roman, T</person>
+        <person class="indexing_service">Frazier, Laurie</person>
+        <person class="indexing_service">Herbert, Bob</person>
+        <person class="indexing_service">Rieckhoff, Paul</person>
+        <person class="indexing_service">Bush, George W (Pres)</person>
+        <object.title class="indexing_service">Chasing Ghosts (Book)</object.title>
+        <classifier class="online_producer" type="types_of_material">Letter</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Opinion/Opinion/Letters</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Opinion</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Opinion/Opinion</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Features/Travel/Guides/Destinations/Middle East</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Features/Travel/Guides/Destinations/Middle East/Iraq</classifier>
+        <classifier class="online_producer" type="general_descriptor">United States International Relations</classifier>
+        <classifier class="online_producer" type="general_descriptor">United States International Relations</classifier>
+        <classifier class="online_producer" type="general_descriptor">Veterans</classifier>
+        <classifier class="online_producer" type="general_descriptor">Public Opinion</classifier>
+        <classifier class="online_producer" type="general_descriptor">International Relations</classifier>
+        <classifier class="online_producer" type="general_descriptor">United States Armament and Defense</classifier>
+        <classifier class="online_producer" type="general_descriptor">Terrorism</classifier>
+        <classifier class="online_producer" type="general_descriptor">Armament, Defense and Military Forces</classifier>
+        <classifier class="online_producer" type="general_descriptor">Books and Literature</classifier>
+        <classifier class="online_producer" type="general_descriptor">United States Politics and Government</classifier>
+        <classifier class="online_producer" type="general_descriptor">Politics and Government</classifier>
       </identified-content>
     </docdata>
-    <pubdata date.publication="20070113T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9D04E7D81330F930A25752C0A9619C8B63" item-length="338" name="The New York Times" unit-of-measure="word"/>
-=======
-    <title>Revelstoke Stores</title>
-    <meta content="3" name="publication_day_of_month"/>
-    <meta content="1" name="publication_month"/>
-    <meta content="1987" name="publication_year"/>
-    <meta content="Saturday" name="publication_day_of_week"/>
-    <meta content="Financial Desk" name="dsk"/>
-    <meta content="30" name="print_page_number"/>
-    <meta content="1" name="print_section"/>
-    <meta content="5" name="print_column"/>
-    <meta content="Business" name="online_sections"/>
-    <docdata>
-      <doc-id id-string="563"/>
-      <doc.copyright holder="The New York Times" year="1987"/>
-      <series series.name="COMPANY NEWS"/>
-      <identified-content>
-        <classifier class="indexing_service" type="descriptor">MERGERS, ACQUISITIONS AND DIVESTITURES</classifier>
-        <org class="indexing_service">REVELSTOKE COMPANIES LTD</org>
-        <org class="indexing_service">HOME HARDWARE STORES LTD</org>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Business</classifier>
-        <classifier class="online_producer" type="general_descriptor">Mergers, Acquisitions and Divestitures</classifier>
-        <classifier class="online_producer" type="general_descriptor">Finances</classifier>
-      </identified-content>
-    </docdata>
-    <pubdata date.publication="19870103T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9B0DE3DF1538F930A35752C0A961948260" item-length="83" name="The New York Times" unit-of-measure="word"/>
->>>>>>> 0a6356df930a4545c4a5256f247c9d376ae00f5e
+    <pubdata date.publication="20070507T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9507E0DB1E3EF934A35756C0A9619C8B63" item-length="945" name="The New York Times" unit-of-measure="word"/>
   </head>
   <body>
     <body.head>
       <hedline>
-<<<<<<< HEAD
-        <hl1>U.S. Official Sees Opening for Revival of Trade Talks</hl1>
+        <hl1>They Sacrifice. We Go Shopping.</hl1>
       </hedline>
-      <byline class="print_byline">By JOHN ZAROCOSTAS</byline>
-      <byline class="normalized_byline">Zarocostas, John</byline>
-      <dateline>GENEVA, Jan. 12</dateline>
       <abstract>
-        <p>US trade representative Susan Schwab, following meeting with World Trade Organization head Pascal Lamy in Geneva, says she is optimistic that collapsed Doha trade negotiations could be restarted; adds there are still obstacles to revival of talks; distances herself from upbeat assessment of European Union trade commissioner Peter Mandelson, who said talks were approaching 'end game'; photo (M)</p>
+        <p>Six letters comment on Bob Herbert's May 3 column about Paul Rieckhoff and his book about his military tour in Iraq; Bill DeLorenzo says nonmilitary Americans are disengaged from war because Iraq war is not just; Lisa Hamilton says Americans are distancing themselves from war because importance of it is no longer apparent; Barbara B Gilbert says those who took US to war have little or no understanding of what war is really like; Martha G Little says it is sad that idealistic men and women who wanted to serve their country with honor are caught in quagmire of Iraq; T Roman says Americans are at loss on how to support troops; Laurie Frazier says Americans are constantly aware of toll on our military and are trying to bring them home soon and alive; drawing</p>
       </abstract>
     </body.head>
     <body.content>
       <block class="lead_paragraph">
-        <p>The United States trade representative, Susan C. Schwab, said Friday that she was optimistic the collapsed Doha trade negotiations could be restarted, but added that there were still obstacles to a revival of the talks.</p>
-        <p>''I am more optimistic than I have been in many months that we are on a path that could help reach a successful conclusion of the Doha round,'' Ms. Schwab said after a three-hour meeting with the head of the World Trade Organization, Pascal Lamy.</p>
+        <p>To the Editor:</p>
+        <p>In ''An Invisible War'' (column, May 3), Bob Herbert describes the lone sacrifice paid by soldiers and their families for the Iraq war. He uses Paul Rieckhoff, a veteran and the head of the advocacy group Iraq and Afghanistan Veterans of America, to provide tangible observations that nonmilitary Americans are totally disengaged from the war.</p>
       </block>
       <block class="full_text">
-        <p>The United States trade representative, Susan C. Schwab, said Friday that she was optimistic the collapsed Doha trade negotiations could be restarted, but added that there were still obstacles to a revival of the talks.</p>
-        <p>''I am more optimistic than I have been in many months that we are on a path that could help reach a successful conclusion of the Doha round,'' Ms. Schwab said after a three-hour meeting with the head of the World Trade Organization, Pascal Lamy.</p>
-        <p>But she added that ''ultimately it will be substance that dictates when there's a breakthrough.''</p>
-        <p>The next few weeks are considered critical to whether the new political impetus could be maintained.</p>
-        <p>Mr. Lamy, who will meet with Prime Minister Tony Blair of Britain in London on Tuesday as part of his step-by-step diplomacy, is also expected to visit India. In the next few weeks, he is scheduled to visit a group of African countries and make stops in Brussels and Washington. The meetings of about 25 trade ministers in late January during the World Economic Forum meeting in Davos, Switzerland, are also considered crucial.</p>
-        <p>Ms. Schwab distanced herself on Friday from the upbeat assessment of Peter Mandelson, the European trade commissioner, who said the talks were approaching ''the endgame.'' She reiterated that an agreement on important issues, like agricultural market access, would dictate whether a deal could be hammered out.</p>
-        <p>In recent weeks, diplomatic activity and support for a deal at high levels in capitals around the world have lifted hopes that the talks could be revived. The talks, which were started in Doha, Qatar, in November 2001, collapsed in late July because of major differences over agricultural subsidies and tariffs primarily among countries like the United States, the European Union, Japan, India, Australia and Brazil.</p>
-        <p>President Bush and José Manuel Barroso, president of the European Commission, meeting Monday in Washington, instructed their negotiators to push ahead with the talks.</p>
-        <p>Many developing countries are apprehensive, about the latest push by the United States and Europe.</p>
-        <p>Correction:  January 18, 2007, Thursday  Because of an editing error, an article in Business Day on Saturday about a meeting between the United States trade representative, Susan C. Schwab, and the head of the World Trade Organization, Pascal Lamy, misstated the date of Mr. Lamy's discussion with Prime Minister Tony Blair of Britain about the restart of global trade negotiations. It had already been held, on Jan. 9; it was not scheduled for Tuesday.</p>
-      </block>
-      <block class="correction_text">
-        <p>Correction: January 18, 2007, Thursday</p>
-        <p>Because of an editing error, an article in Business Day on Saturday about a meeting between the United States trade representative, Susan C. Schwab, and the head of the World Trade Organization, Pascal Lamy, misstated the date of Mr. Lamy's discussion with Prime Minister Tony Blair of Britain about the restart of global trade negotiations. It had already been held, on Jan. 9; it was not scheduled for Tuesday.</p>
-=======
-        <hl1>Revelstoke Stores</hl1>
-      </hedline>
-      <byline class="print_byline">Reuters</byline>
-      <dateline>CALGARY, Alberta, Jan. 2</dateline>
-    </body.head>
-    <body.content>
-      <block class="lead_paragraph">
-        <p>LEAD: The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said.</p>
-      </block>
-      <block class="full_text">
-        <p>LEAD: The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said.</p>
-        <p>The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said. It said that it would expand its chain of 18 urban-related home improvement stores into other Canadian metropolitan markets.</p>
-        <p>COMPANY NEWS</p>
->>>>>>> 0a6356df930a4545c4a5256f247c9d376ae00f5e
+        <p>To the Editor:</p>
+        <p>In ''An Invisible War'' (column, May 3), Bob Herbert describes the lone sacrifice paid by soldiers and their families for the Iraq war. He uses Paul Rieckhoff, a veteran and the head of the advocacy group Iraq and Afghanistan Veterans of America, to provide tangible observations that nonmilitary Americans are totally disengaged from the war.</p>
+        <p>Mr. Rieckhoff blames President Bush for not having asked the American people to do anything and says that if the American people understood what it was like to be in war, they would behave differently.</p>
+        <p>The problem is more basic. One can just imagine what the reaction would have been from the American people if President Bush had said before the invasion of Iraq, a country that never attacked us, that there would be thousands of casualties (not counting innocent Iraqis) and that there would be an open-ended nation-building project to repair the damage. There would be no chance that America would be in Iraq today.</p>
+        <p>History shows that when Americans are called upon to fight a just war (as in World War II), there is no limit to their engagement and sacrifice. The Iraq war is not a just war. The Bush administration knew that before we invaded Iraq, and tragically, our military has had to bear the entire burden.</p>
+        <p>Bill DeLorenzo  Basking Ridge, N.J., May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>Bob Herbert conveys Paul Rieckhoff's lament that Americans are shopping instead of paying attention to the wars in Iraq and Afghanistan. While I feel terrible for Mr. Rieckhoff and his fellow soldiers and the sacrifices they have made, I and almost everyone I know opposed the war in Iraq from the beginning.</p>
+        <p>I marched, I protested, I signed petitions, I wrote my Congressional representatives, I voted in 2004 and 2006 with the intent to signal my discontent with the direction the country had taken on the war. Since nothing I did and nothing I felt, wrote or signaled has made the least amount of difference, I have indeed detached from the situation.</p>
+        <p>While I honor the good intentions behind the military service of Mr. Rieckhoff and others in Iraq, I disagree that they're carrying out ''an important task.'' The reason Americans are distracting themselves is that the importance of the Iraq war is no longer (and perhaps has never been) apparent to many, and it's too painful to watch the unnecessary killings of so many Americans and Iraqis.</p>
+        <p>Of course we'd rather watch the fake conflict of ''American Idol.'' Or buy shoes.</p>
+        <p>Lisa Hamilton  Los Angeles, May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>Bob Herbert writes that Paul Rieckhoff believes that ''part of the problem is that too many civilians have little or no understanding of what war is really like, and of the toll it takes beyond the obvious toll of the dead and wounded.''</p>
+        <p>I would suggest that a great deal of the problem is that those who took us to war in Iraq -- President Bush, Vice President Dick Cheney and the rest -- have little or no understanding of what war is really like. That is at least part of the disconnect.</p>
+        <p>If our ''leaders'' are oblivious to the real human cost of war, how can we expect ordinary citizens (who have no relatives or friends fighting this war) to be engaged?</p>
+        <p>Barbara B. Gilbert  Diamondhead, Miss., May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>Bob Herbert's column made for difficult, sad reading. The disillusionment of one articulate veteran in his book, ''Chasing Ghosts, '' speaks for many in the armed forces who do not understand our society's ignorance of what their brutal role in Iraq has been.</p>
+        <p>What is difficult for all of us to realize is that the war was a wrong, misguided undertaking from the start. What is sad is that idealistic young men and women who wanted to serve their country with honor are caught in the quagmire.</p>
+        <p>A majority of Americans now realize our country's tragic mistake. What are our veterans to think?</p>
+        <p>Martha G. Little  Baltimore, May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>In ''An Invisible War,'' Bob Herbert points out correctly that this administration does not support the troops nor does it ask nonmilitary citizens to sacrifice anything really, but I disagree with the implication that the majority of Americans are happily ignoring this war.</p>
+        <p>My sense is that many nonmilitary citizens feel absolutely powerless to do anything in the face of a president and an administration that don't seem to answer to the people, and so use ''American Idol'' and other forms of distraction as a balm against the alternative of constant weeping.</p>
+        <p>Americans -- even Americans who did not support this war from the outset -- do want to support the troops, but are at a loss as to how to go about doing so.</p>
+        <p>T. Roman  Nashville, May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>As a public high school teacher in a small town who sends more students off to the military than have come home, I can assure Paul Rieckhoff that Americans en masse are definitely fully and constantly aware of the toll on our military, and its members are getting exactly the support they deserve from us: trying to bring them home soon and alive.</p>
+        <p>And no, the president hasn't asked for that support from us. It's freely given.</p>
+        <p>A former student who is in Iraq (again) wholeheartedly supports our vigorous debate here at home. Far from seeing it as unpatriotic, he says: ''If you don't debate it, who will? We certainly can't. We're counting on you.''</p>
+        <p>Laurie Frazier  Manteca, Calif., May 3, 2007</p>
       </block>
     </body.content>
   </body>
