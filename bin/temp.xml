@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nitf change.date="June 10, 2005" change.time="19:30" version="-//IPTC//DTD NITF 3.3//EN">
   <head>
+<<<<<<< HEAD
     <title>U.S. Official Sees Opening for Revival of Trade Talks</title>
     <meta content="13trade" name="slug"/>
     <meta content="13" name="publication_day_of_month"/>
@@ -34,10 +35,37 @@
       </identified-content>
     </docdata>
     <pubdata date.publication="20070113T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9D04E7D81330F930A25752C0A9619C8B63" item-length="338" name="The New York Times" unit-of-measure="word"/>
+=======
+    <title>Revelstoke Stores</title>
+    <meta content="3" name="publication_day_of_month"/>
+    <meta content="1" name="publication_month"/>
+    <meta content="1987" name="publication_year"/>
+    <meta content="Saturday" name="publication_day_of_week"/>
+    <meta content="Financial Desk" name="dsk"/>
+    <meta content="30" name="print_page_number"/>
+    <meta content="1" name="print_section"/>
+    <meta content="5" name="print_column"/>
+    <meta content="Business" name="online_sections"/>
+    <docdata>
+      <doc-id id-string="563"/>
+      <doc.copyright holder="The New York Times" year="1987"/>
+      <series series.name="COMPANY NEWS"/>
+      <identified-content>
+        <classifier class="indexing_service" type="descriptor">MERGERS, ACQUISITIONS AND DIVESTITURES</classifier>
+        <org class="indexing_service">REVELSTOKE COMPANIES LTD</org>
+        <org class="indexing_service">HOME HARDWARE STORES LTD</org>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Business</classifier>
+        <classifier class="online_producer" type="general_descriptor">Mergers, Acquisitions and Divestitures</classifier>
+        <classifier class="online_producer" type="general_descriptor">Finances</classifier>
+      </identified-content>
+    </docdata>
+    <pubdata date.publication="19870103T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9B0DE3DF1538F930A35752C0A961948260" item-length="83" name="The New York Times" unit-of-measure="word"/>
+>>>>>>> 0a6356df930a4545c4a5256f247c9d376ae00f5e
   </head>
   <body>
     <body.head>
       <hedline>
+<<<<<<< HEAD
         <hl1>U.S. Official Sees Opening for Revival of Trade Talks</hl1>
       </hedline>
       <byline class="print_byline">By JOHN ZAROCOSTAS</byline>
@@ -67,6 +95,21 @@
       <block class="correction_text">
         <p>Correction: January 18, 2007, Thursday</p>
         <p>Because of an editing error, an article in Business Day on Saturday about a meeting between the United States trade representative, Susan C. Schwab, and the head of the World Trade Organization, Pascal Lamy, misstated the date of Mr. Lamy's discussion with Prime Minister Tony Blair of Britain about the restart of global trade negotiations. It had already been held, on Jan. 9; it was not scheduled for Tuesday.</p>
+=======
+        <hl1>Revelstoke Stores</hl1>
+      </hedline>
+      <byline class="print_byline">Reuters</byline>
+      <dateline>CALGARY, Alberta, Jan. 2</dateline>
+    </body.head>
+    <body.content>
+      <block class="lead_paragraph">
+        <p>LEAD: The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said.</p>
+      </block>
+      <block class="full_text">
+        <p>LEAD: The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said.</p>
+        <p>The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said. It said that it would expand its chain of 18 urban-related home improvement stores into other Canadian metropolitan markets.</p>
+        <p>COMPANY NEWS</p>
+>>>>>>> 0a6356df930a4545c4a5256f247c9d376ae00f5e
       </block>
     </body.content>
   </body>

@@ -771,9 +771,14 @@ public class Manager
 			getPostProcessModule(lastPP).process(this, srq);
 		}
 		
+<<<<<<< HEAD
 		if ((ApplicationSetup.getProperty("querying.postprocesses.diversify1", "off")) == "on"){
 			diversifyResults(srq);
 		}
+=======
+		//diversifyResults(srq);
+		algo1(srq);
+>>>>>>> 0a6356df930a4545c4a5256f247c9d376ae00f5e
 		
 		
 	}
@@ -993,7 +998,221 @@ public class Manager
 	}
 	
 	
+public void algo1(SearchRequest initialSrq){
+		
+		/*System.out.println("Public algo1");
+		String hardCodedQuery = "india";
+		Query q = null;
+		
+		try{
+			q = QueryParser.parseQuery(hardCodedQuery);
+		} catch (Exception e) {
+			//century kludge!
+			//remove everything except character and spaces, and retry
+			try {
+				q = QueryParser.parseQuery(hardCodedQuery.replaceAll("[^a-zA-Z0-9 ]", ""));
+			} catch (QueryParserException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}	
+		}
+		if (q == null)
+		{
+			logger.debug("Hard Coded query not working");
+			//give up
+			return;
+		}
+		
+		
+		SearchRequest srq1 = newSearchRequest();
+		srq1.setQuery(q);
+		//srq1.addMatchingModel( mModel, wModel);
+		srq1.addMatchingModel(((Request)initialSrq).getMatchingModel(),((Request)initialSrq).getWeightingModel()); 
+		srq1.setControl("c", "1.0d");
+		runPreProcessing(srq1);
+		runMatching(srq1);
+		
+		SearchRequest srq2 = newSearchRequest();
+		srq2.setQuery(q);
+		//srq1.addMatchingModel( mModel, wModel);
+		srq2.addMatchingModel(((Request)initialSrq).getMatchingModel(),((Request)initialSrq).getWeightingModel()); 
+		srq2.setControl("c", "1.0d");
+		runPreProcessing(srq2);
+		runMatching(srq2);
+				
+		
+		 ArrayList<SearchRequest> subQueries =new ArrayList<SearchRequest>();
+		 subQueries.add(srq1);
+		 subQueries.add(srq2);
+		 */
 	
+		ArrayList<SearchRequest> subQueries =new ArrayList<SearchRequest>();
+				
+		List<String> Aspects = new ArrayList<String>(getAspectsForQuery(initialSrq));
+		
+	
+		
+		for(int i=0;i< Math.min(5, Aspects.size()); i++){
+			String subQuery = Aspects.get(i);
+			System.out.println(subQuery);
+			Query q = null;
+			
+			try{
+				q = QueryParser.parseQuery(subQuery);
+			} catch (Exception e) {
+				//century kludge!
+				//remove everything except character and spaces, and retry
+				try {
+					q = QueryParser.parseQuery(subQuery.replaceAll("[^a-zA-Z0-9 ]", ""));
+				} catch (QueryParserException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
+			}
+			if (q == null)
+			{
+				logger.debug("SubQueries not working");
+				//give up
+				return;
+			}
+			
+			String mModel = ApplicationSetup.getProperty("desktop.matching","Matching");
+			String wModel = ApplicationSetup.getProperty("desktop.model", "PL2");
+			
+			SearchRequest srq1 = newSearchRequest();
+			srq1.setQuery(q);
+			//srq1.addMatchingModel( mModel, wModel);
+			srq1.addMatchingModel(((Request)initialSrq).getMatchingModel(),((Request)initialSrq).getWeightingModel()); 
+			srq1.setControl("c", "1.0d");
+			runPreProcessing(srq1);
+			runMatching(srq1);
+			subQueries.add(srq1);
+		}
+		
+		
+		 
+		 double[] subQueryRelevance = new double[subQueries.size()];
+		 for(int i=0;i<subQueryRelevance.length; i++){
+			 subQueryRelevance[i] = 1.0 / (double) subQueries.size();
+		 }
+		 
+		 
+		 //diversifyResults(initialSrq, subQueries, subQueryRelevance, lambda ,w);
+		 
+		 double lambda = 0.1;
+		 int k = 10;
+		 
+		 algo1(initialSrq, subQueries , lambda ,k);
+	}
+	
+	
+	private void algo1 (SearchRequest initialSrq, ArrayList<SearchRequest> aspects, double lam ,int k  )
+	{
+		System.out.println("algo1");
+		
+		ResultSet diversifiedResultSet;
+		Queue<CandidateResult> candidateDiversifiedResultList = new PriorityQueue<CandidateResult>();
+						
+		double [] quotient = new double [aspects.size()];
+		double [] s = new double [aspects.size()];
+		double [] v = new double [aspects.size()];
+		
+		System.out.println("size:" +aspects.size());
+		
+		
+		for (int j=0;j<aspects.size();j++)
+		{
+			s[j]=0;
+			v[j]=1/(double)(aspects.size());
+		}
+		
+		int max_q_ind = 0; 
+		
+		for(int j=0;j<k;j++)
+		{
+			ResultSet initialResultSet = initialSrq.getResultSet();
+			double[] initialScores = initialResultSet.getScores();
+			
+			for (int i=0;i<aspects.size();i++)
+			{
+				quotient[i]= v[i]/(2*s[i]+1);
+				//System.out.println("q["+ i+"]"+quotient[i]);
+				if(quotient[i]>quotient[max_q_ind])
+				{
+					max_q_ind=i;
+				}
+						
+			}
+		
+		
+		double max_value = 0;
+		int max_docIndex = 0;
+		double temp1 ,temp2=0;
+		
+		for(int initialDocumentIndex=0; initialDocumentIndex < initialScores.length; initialDocumentIndex++)
+		{
+			SearchRequest selectedAspect = aspects.get(max_q_ind);
+			temp1 = lam * quotient[max_q_ind] * getScoreForDocumentId(initialResultSet.getDocids()[initialDocumentIndex], selectedAspect);
+			
+			for(int aspectIndex =0; aspectIndex<aspects.size() ; aspectIndex++)
+			{
+				if(aspectIndex != max_q_ind)
+				{
+					temp2 = temp2 + (1-lam) * quotient[aspectIndex] * getScoreForDocumentId(initialResultSet.getDocids()[initialDocumentIndex], aspects.get(aspectIndex));
+				}
+			}
+			
+			if(temp1+temp2 > max_value )
+			{
+				max_docIndex = initialDocumentIndex;
+				max_value=temp1+temp2;
+			}
+			
+		}
+		
+		//System.out.println("max value"+max_value);
+		CandidateResult currentCandidate = new CandidateResult(initialResultSet.getDocids()[max_docIndex]);
+		//currentCandidate.updateScore(getScoreForDocumentId(maxDocumentId,(SearchRequest)initialResultSet));
+		currentCandidate.updateScore(getScoreForDocumentId(initialResultSet.getDocids()[max_docIndex],initialSrq));
+		//System.out.println("update score" + getScoreForDocumentId(initialResultSet.getDocids()[max_docIndex],initialSrq));
+		candidateDiversifiedResultList.add(currentCandidate);
+		
+		
+		//To remove document from initialResultSet
+		TIntArrayList docatnumbers = new TIntArrayList();//list of resultset index numbers to keep
+		for(int initialDocumentIndex=0; initialDocumentIndex < initialResultSet.getResultSize(); initialDocumentIndex++){
+			
+			if(initialResultSet.getDocids()[initialDocumentIndex] != initialResultSet.getDocids()[max_docIndex]){
+				docatnumbers.add(initialDocumentIndex);
+			}
+		}
+		
+		//((Request)initialResultSet).setResultSet(initialResultSet.getResultSet(docatnumbers.toNativeArray()));
+		((Request)initialSrq).setResultSet(initialResultSet.getResultSet(docatnumbers.toNativeArray()));
+		
+		
+		//diversifiedResultSet.add(max_docIndex)
+		//remove max_docIndex from initial set
+		
+		double temp_score=0;
+		
+		for(int aspectIndex =0; aspectIndex<aspects.size(); aspectIndex++)
+		{
+			temp_score += getScoreForDocumentId(initialResultSet.getDocids()[max_docIndex], aspects.get(aspectIndex));
+		}
+		
+		for(int aspectIndex =0; aspectIndex<aspects.size() ; aspectIndex++)
+		{
+			s[aspectIndex] += (getScoreForDocumentId(initialResultSet.getDocids()[max_docIndex], aspects.get(aspectIndex)))/temp_score;
+			//System.out.println("s["+ aspectIndex+"]"+quotient[aspectIndex]);
+		}
+	
+	}
+	
+		diversifiedResultSet = new CandidateResultSet(candidateDiversifiedResultList);
+		((Request)initialSrq).setResultSet(diversifiedResultSet);
+		
+	}
 	
 	
 	/** Runs the PostFilter modules in order added. PostFilter modules
