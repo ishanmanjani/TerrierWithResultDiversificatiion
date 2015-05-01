@@ -771,7 +771,10 @@ public class Manager
 			getPostProcessModule(lastPP).process(this, srq);
 		}
 		
-		diversifyResults(srq);
+		if ((ApplicationSetup.getProperty("querying.postprocesses.diversify1", "off")) == "on"){
+			diversifyResults(srq);
+		}
+		
 		
 	}
 	
@@ -783,11 +786,12 @@ public class Manager
 		
 		List<String> Aspects = new ArrayList<String>(getAspectsForQuery(initialSrq));
 		
-	
+		for(int i=0;i< Math.min(5, Aspects.size()); i++){
+			System.out.println("Aspect "+i+": "+Aspects.get(i));
+		}
 		
 		for(int i=0;i< Math.min(5, Aspects.size()); i++){
 			String subQuery = Aspects.get(i);
-			System.out.println(subQuery);
 			Query q = null;
 			
 			try{
