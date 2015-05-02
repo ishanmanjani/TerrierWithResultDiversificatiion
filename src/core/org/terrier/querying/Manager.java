@@ -771,8 +771,18 @@ public class Manager
 			getPostProcessModule(lastPP).process(this, srq);
 		}
 		
+<<<<<<< HEAD
 		//diversifyResults(srq);
 		//algo1(srq);
+=======
+
+		/*if ((ApplicationSetup.getProperty("querying.postprocesses.diversify1", "off")) == "on"){
+			diversifyResults(srq);
+		}*/
+
+		//algo1(srq);
+		diversifyResults(srq);
+>>>>>>> b3c289c5b605bed5196eb0c68931633477bd1927
 		
 		
 	}
@@ -785,12 +795,17 @@ public class Manager
 		
 		List<String> Aspects = new ArrayList<String>(getAspectsForQuery(initialSrq));
 		
+<<<<<<< HEAD
 		
 	
+=======
+		for(int i=0;i< Math.min(10, Aspects.size()); i++){
+			System.out.println("Aspect "+i+": "+Aspects.get(i));
+		}
+>>>>>>> b3c289c5b605bed5196eb0c68931633477bd1927
 		
-		for(int i=0;i< Math.min(5, Aspects.size()); i++){
+		for(int i=0;i< Math.min(2, Aspects.size()); i++){
 			String subQuery = Aspects.get(i);
-			System.out.println(subQuery);
 			Query q = null;
 			
 			try{
@@ -825,6 +840,8 @@ public class Manager
 			subQueries.add(srq1);
 		}
 		
+		//subQueries.add(srq)
+		
 		
 		 
 		 double[] subQueryRelevance = new double[subQueries.size()];
@@ -833,7 +850,7 @@ public class Manager
 		 }
 		 
 		 int lambda = 10;
-		 double w = 0.5;
+		 double w = 0.01;
 		 
 		 diversifyResults(initialSrq, subQueries, subQueryRelevance, lambda ,w);
 	}

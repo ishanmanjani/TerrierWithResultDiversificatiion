@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nitf change.date="June 10, 2005" change.time="19:30" version="-//IPTC//DTD NITF 3.3//EN">
   <head>
+<<<<<<< HEAD
     <title>Bavasi Leaves Indians</title>
     <meta content="24" name="publication_day_of_month"/>
     <meta content="1" name="publication_month"/>
@@ -29,10 +30,66 @@
       </identified-content>
     </docdata>
     <pubdata date.publication="19870124T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9B0DE1DA143CF937A15752C0A961948260" item-length="111" name="The New York Times" unit-of-measure="word"/>
+=======
+    <title>They Sacrifice. We Go Shopping.</title>
+    <meta content="l07herbert" name="slug"/>
+    <meta content="7" name="publication_day_of_month"/>
+    <meta content="5" name="publication_month"/>
+    <meta content="2007" name="publication_year"/>
+    <meta content="Monday" name="publication_day_of_week"/>
+    <meta content="Editorial Desk" name="dsk"/>
+    <meta content="20" name="print_page_number"/>
+    <meta content="A" name="print_section"/>
+    <meta content="4" name="print_column"/>
+    <meta content="Opinion" name="online_sections"/>
+    <docdata>
+      <doc-id id-string="1845730"/>
+      <doc.copyright holder="The New York Times" year="2007"/>
+      <identified-content>
+        <classifier class="indexing_service" type="descriptor">United States Armament and Defense</classifier>
+        <classifier class="indexing_service" type="descriptor">United States International Relations</classifier>
+        <classifier class="indexing_service" type="descriptor">Veterans</classifier>
+        <classifier class="indexing_service" type="descriptor">Public Opinion</classifier>
+        <classifier class="indexing_service" type="descriptor">Books and Literature</classifier>
+        <classifier class="indexing_service" type="descriptor">Terrorism</classifier>
+        <location class="indexing_service">Iraq</location>
+        <org class="indexing_service">Iraq and Afghanistan Veterans of America</org>
+        <person class="indexing_service">Delorenzo, Bill</person>
+        <person class="indexing_service">Hamilton, Lisa</person>
+        <person class="indexing_service">Gilbert, Barbara B</person>
+        <person class="indexing_service">Little, Martha G</person>
+        <person class="indexing_service">Roman, T</person>
+        <person class="indexing_service">Frazier, Laurie</person>
+        <person class="indexing_service">Herbert, Bob</person>
+        <person class="indexing_service">Rieckhoff, Paul</person>
+        <person class="indexing_service">Bush, George W (Pres)</person>
+        <object.title class="indexing_service">Chasing Ghosts (Book)</object.title>
+        <classifier class="online_producer" type="types_of_material">Letter</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Opinion/Opinion/Letters</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Opinion</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Opinion/Opinion</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Features/Travel/Guides/Destinations/Middle East</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Features/Travel/Guides/Destinations/Middle East/Iraq</classifier>
+        <classifier class="online_producer" type="general_descriptor">United States International Relations</classifier>
+        <classifier class="online_producer" type="general_descriptor">United States International Relations</classifier>
+        <classifier class="online_producer" type="general_descriptor">Veterans</classifier>
+        <classifier class="online_producer" type="general_descriptor">Public Opinion</classifier>
+        <classifier class="online_producer" type="general_descriptor">International Relations</classifier>
+        <classifier class="online_producer" type="general_descriptor">United States Armament and Defense</classifier>
+        <classifier class="online_producer" type="general_descriptor">Terrorism</classifier>
+        <classifier class="online_producer" type="general_descriptor">Armament, Defense and Military Forces</classifier>
+        <classifier class="online_producer" type="general_descriptor">Books and Literature</classifier>
+        <classifier class="online_producer" type="general_descriptor">United States Politics and Government</classifier>
+        <classifier class="online_producer" type="general_descriptor">Politics and Government</classifier>
+      </identified-content>
+    </docdata>
+    <pubdata date.publication="20070507T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9507E0DB1E3EF934A35756C0A9619C8B63" item-length="945" name="The New York Times" unit-of-measure="word"/>
+>>>>>>> b3c289c5b605bed5196eb0c68931633477bd1927
   </head>
   <body>
     <body.head>
       <hedline>
+<<<<<<< HEAD
         <hl1>Bavasi Leaves Indians</hl1>
       </hedline>
     </body.head>
@@ -44,6 +101,52 @@
         <p>LEAD: Peter Bavasi resigned as president of the Cleveland Indians in order to take over as president and chief executive officer of Telerate Sports, a newly formed sports- information service. The Indians said that Dan O'Brien, Joe Klein, Terry Barthelmas and Greg Olson would handle the direction and day-to-day activities of the club.</p>
         <p>Peter Bavasi resigned as president of the Cleveland Indians in order to take over as president and chief executive officer of Telerate Sports, a newly formed sports- information service. The Indians said that Dan O'Brien, Joe Klein, Terry Barthelmas and Greg Olson would handle the direction and day-to-day activities of the club. Bavasi, 44, joined the Indians in November 1984. Last season the team had an 84-78 record, its best since 1968, and attendance of 1.47 million, its highest since 1959. Bavasi, the son of Buzzy Bavasi, the former baseball executive, was founding president the Toronto Blue Jays and former general manager of the San Diego Padres.</p>
         <p>SPORTS PEOPLE</p>
+=======
+        <hl1>They Sacrifice. We Go Shopping.</hl1>
+      </hedline>
+      <abstract>
+        <p>Six letters comment on Bob Herbert's May 3 column about Paul Rieckhoff and his book about his military tour in Iraq; Bill DeLorenzo says nonmilitary Americans are disengaged from war because Iraq war is not just; Lisa Hamilton says Americans are distancing themselves from war because importance of it is no longer apparent; Barbara B Gilbert says those who took US to war have little or no understanding of what war is really like; Martha G Little says it is sad that idealistic men and women who wanted to serve their country with honor are caught in quagmire of Iraq; T Roman says Americans are at loss on how to support troops; Laurie Frazier says Americans are constantly aware of toll on our military and are trying to bring them home soon and alive; drawing</p>
+      </abstract>
+    </body.head>
+    <body.content>
+      <block class="lead_paragraph">
+        <p>To the Editor:</p>
+        <p>In ''An Invisible War'' (column, May 3), Bob Herbert describes the lone sacrifice paid by soldiers and their families for the Iraq war. He uses Paul Rieckhoff, a veteran and the head of the advocacy group Iraq and Afghanistan Veterans of America, to provide tangible observations that nonmilitary Americans are totally disengaged from the war.</p>
+      </block>
+      <block class="full_text">
+        <p>To the Editor:</p>
+        <p>In ''An Invisible War'' (column, May 3), Bob Herbert describes the lone sacrifice paid by soldiers and their families for the Iraq war. He uses Paul Rieckhoff, a veteran and the head of the advocacy group Iraq and Afghanistan Veterans of America, to provide tangible observations that nonmilitary Americans are totally disengaged from the war.</p>
+        <p>Mr. Rieckhoff blames President Bush for not having asked the American people to do anything and says that if the American people understood what it was like to be in war, they would behave differently.</p>
+        <p>The problem is more basic. One can just imagine what the reaction would have been from the American people if President Bush had said before the invasion of Iraq, a country that never attacked us, that there would be thousands of casualties (not counting innocent Iraqis) and that there would be an open-ended nation-building project to repair the damage. There would be no chance that America would be in Iraq today.</p>
+        <p>History shows that when Americans are called upon to fight a just war (as in World War II), there is no limit to their engagement and sacrifice. The Iraq war is not a just war. The Bush administration knew that before we invaded Iraq, and tragically, our military has had to bear the entire burden.</p>
+        <p>Bill DeLorenzo  Basking Ridge, N.J., May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>Bob Herbert conveys Paul Rieckhoff's lament that Americans are shopping instead of paying attention to the wars in Iraq and Afghanistan. While I feel terrible for Mr. Rieckhoff and his fellow soldiers and the sacrifices they have made, I and almost everyone I know opposed the war in Iraq from the beginning.</p>
+        <p>I marched, I protested, I signed petitions, I wrote my Congressional representatives, I voted in 2004 and 2006 with the intent to signal my discontent with the direction the country had taken on the war. Since nothing I did and nothing I felt, wrote or signaled has made the least amount of difference, I have indeed detached from the situation.</p>
+        <p>While I honor the good intentions behind the military service of Mr. Rieckhoff and others in Iraq, I disagree that they're carrying out ''an important task.'' The reason Americans are distracting themselves is that the importance of the Iraq war is no longer (and perhaps has never been) apparent to many, and it's too painful to watch the unnecessary killings of so many Americans and Iraqis.</p>
+        <p>Of course we'd rather watch the fake conflict of ''American Idol.'' Or buy shoes.</p>
+        <p>Lisa Hamilton  Los Angeles, May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>Bob Herbert writes that Paul Rieckhoff believes that ''part of the problem is that too many civilians have little or no understanding of what war is really like, and of the toll it takes beyond the obvious toll of the dead and wounded.''</p>
+        <p>I would suggest that a great deal of the problem is that those who took us to war in Iraq -- President Bush, Vice President Dick Cheney and the rest -- have little or no understanding of what war is really like. That is at least part of the disconnect.</p>
+        <p>If our ''leaders'' are oblivious to the real human cost of war, how can we expect ordinary citizens (who have no relatives or friends fighting this war) to be engaged?</p>
+        <p>Barbara B. Gilbert  Diamondhead, Miss., May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>Bob Herbert's column made for difficult, sad reading. The disillusionment of one articulate veteran in his book, ''Chasing Ghosts, '' speaks for many in the armed forces who do not understand our society's ignorance of what their brutal role in Iraq has been.</p>
+        <p>What is difficult for all of us to realize is that the war was a wrong, misguided undertaking from the start. What is sad is that idealistic young men and women who wanted to serve their country with honor are caught in the quagmire.</p>
+        <p>A majority of Americans now realize our country's tragic mistake. What are our veterans to think?</p>
+        <p>Martha G. Little  Baltimore, May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>In ''An Invisible War,'' Bob Herbert points out correctly that this administration does not support the troops nor does it ask nonmilitary citizens to sacrifice anything really, but I disagree with the implication that the majority of Americans are happily ignoring this war.</p>
+        <p>My sense is that many nonmilitary citizens feel absolutely powerless to do anything in the face of a president and an administration that don't seem to answer to the people, and so use ''American Idol'' and other forms of distraction as a balm against the alternative of constant weeping.</p>
+        <p>Americans -- even Americans who did not support this war from the outset -- do want to support the troops, but are at a loss as to how to go about doing so.</p>
+        <p>T. Roman  Nashville, May 3, 2007</p>
+        <p>To the Editor:</p>
+        <p>As a public high school teacher in a small town who sends more students off to the military than have come home, I can assure Paul Rieckhoff that Americans en masse are definitely fully and constantly aware of the toll on our military, and its members are getting exactly the support they deserve from us: trying to bring them home soon and alive.</p>
+        <p>And no, the president hasn't asked for that support from us. It's freely given.</p>
+        <p>A former student who is in Iraq (again) wholeheartedly supports our vigorous debate here at home. Far from seeing it as unpatriotic, he says: ''If you don't debate it, who will? We certainly can't. We're counting on you.''</p>
+        <p>Laurie Frazier  Manteca, Calif., May 3, 2007</p>
+>>>>>>> b3c289c5b605bed5196eb0c68931633477bd1927
       </block>
     </body.content>
   </body>
