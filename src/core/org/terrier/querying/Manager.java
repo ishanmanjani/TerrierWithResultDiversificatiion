@@ -772,7 +772,7 @@ public class Manager
 		}
 		
 		//diversifyResults(srq);
-		algo1(srq);
+		//algo1(srq);
 		
 		
 	}
@@ -784,6 +784,7 @@ public class Manager
 		//String hardCodedQuery = "A MARKET WHERE CHEMICAL IS KING";
 		
 		List<String> Aspects = new ArrayList<String>(getAspectsForQuery(initialSrq));
+		
 		
 	
 		
@@ -983,9 +984,7 @@ public class Manager
 			Aspects.addAll(aspectsForCurrDoc);
 		}
 		
-		/*for(String a:Aspects){
-			System.out.println(a);
-		}*/
+		
 		
 		return Aspects;
 	}
@@ -1045,7 +1044,7 @@ public void algo1(SearchRequest initialSrq){
 		
 	
 		
-		for(int i=0;i< Math.min(5, Aspects.size()); i++){
+		for(int i=0;i< Math.min(10, Aspects.size()); i++){
 			String subQuery = Aspects.get(i);
 			System.out.println(subQuery);
 			Query q = null;
@@ -1092,7 +1091,7 @@ public void algo1(SearchRequest initialSrq){
 		 
 		 //diversifyResults(initialSrq, subQueries, subQueryRelevance, lambda ,w);
 		 
-		 double lambda = 0.1;
+		 double lambda = 5;
 		 int k = 10;
 		 
 		 algo1(initialSrq, subQueries , lambda ,k);
@@ -1110,7 +1109,9 @@ public void algo1(SearchRequest initialSrq){
 		double [] s = new double [aspects.size()];
 		double [] v = new double [aspects.size()];
 		
-		System.out.println("size:" +aspects.size());
+		//System.out.println("size:" +aspects.size());
+		
+		
 		
 		
 		for (int j=0;j<aspects.size();j++)

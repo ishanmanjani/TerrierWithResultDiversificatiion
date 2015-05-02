@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nitf change.date="June 10, 2005" change.time="19:30" version="-//IPTC//DTD NITF 3.3//EN">
   <head>
-    <title>Revelstoke Stores</title>
-    <meta content="3" name="publication_day_of_month"/>
+    <title>Bavasi Leaves Indians</title>
+    <meta content="24" name="publication_day_of_month"/>
     <meta content="1" name="publication_month"/>
     <meta content="1987" name="publication_year"/>
     <meta content="Saturday" name="publication_day_of_week"/>
-    <meta content="Financial Desk" name="dsk"/>
-    <meta content="30" name="print_page_number"/>
+    <meta content="Sports Desk" name="dsk"/>
+    <meta content="50" name="print_page_number"/>
     <meta content="1" name="print_section"/>
     <meta content="5" name="print_column"/>
-    <meta content="Business" name="online_sections"/>
+    <meta content="Sports" name="online_sections"/>
     <docdata>
-      <doc-id id-string="563"/>
+      <doc-id id-string="6653"/>
       <doc.copyright holder="The New York Times" year="1987"/>
-      <series series.name="COMPANY NEWS"/>
+      <series series.name="SPORTS PEOPLE"/>
       <identified-content>
-        <classifier class="indexing_service" type="descriptor">MERGERS, ACQUISITIONS AND DIVESTITURES</classifier>
-        <org class="indexing_service">REVELSTOKE COMPANIES LTD</org>
-        <org class="indexing_service">HOME HARDWARE STORES LTD</org>
-        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Business</classifier>
-        <classifier class="online_producer" type="general_descriptor">Mergers, Acquisitions and Divestitures</classifier>
-        <classifier class="online_producer" type="general_descriptor">Finances</classifier>
+        <classifier class="indexing_service" type="descriptor">BASEBALL</classifier>
+        <classifier class="indexing_service" type="descriptor">SUSPENSIONS, DISMISSALS AND RESIGNATIONS</classifier>
+        <org class="indexing_service">CLEVELAND INDIANS</org>
+        <person class="indexing_service">BAVASI, PETER</person>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Sports</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Sports/Baseball/Major League/Cleveland Indians</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Sports/Baseball</classifier>
+        <classifier class="online_producer" type="general_descriptor">Suspensions, Dismissals and Resignations</classifier>
+        <classifier class="online_producer" type="general_descriptor">Baseball</classifier>
       </identified-content>
     </docdata>
-    <pubdata date.publication="19870103T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9B0DE3DF1538F930A35752C0A961948260" item-length="83" name="The New York Times" unit-of-measure="word"/>
+    <pubdata date.publication="19870124T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9B0DE1DA143CF937A15752C0A961948260" item-length="111" name="The New York Times" unit-of-measure="word"/>
   </head>
   <body>
     <body.head>
       <hedline>
-        <hl1>Revelstoke Stores</hl1>
+        <hl1>Bavasi Leaves Indians</hl1>
       </hedline>
-      <byline class="print_byline">Reuters</byline>
-      <dateline>CALGARY, Alberta, Jan. 2</dateline>
     </body.head>
     <body.content>
       <block class="lead_paragraph">
-        <p>LEAD: The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said.</p>
+        <p>LEAD: Peter Bavasi resigned as president of the Cleveland Indians in order to take over as president and chief executive officer of Telerate Sports, a newly formed sports- information service. The Indians said that Dan O'Brien, Joe Klein, Terry Barthelmas and Greg Olson would handle the direction and day-to-day activities of the club.</p>
       </block>
       <block class="full_text">
-        <p>LEAD: The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said.</p>
-        <p>The Revelstoke Companies said it would sell its 52 rural building supply stores to Home Hardware Stores Ltd. for about $25 million. The final price will depend on inventory levels when Home Hardware takes over the stores, according to Revelstoke. The transaction is scheduled to close on Jan. 30. The stores being sold had 1986 sales of $59 million, the company said. It said that it would expand its chain of 18 urban-related home improvement stores into other Canadian metropolitan markets.</p>
-        <p>COMPANY NEWS</p>
+        <p>LEAD: Peter Bavasi resigned as president of the Cleveland Indians in order to take over as president and chief executive officer of Telerate Sports, a newly formed sports- information service. The Indians said that Dan O'Brien, Joe Klein, Terry Barthelmas and Greg Olson would handle the direction and day-to-day activities of the club.</p>
+        <p>Peter Bavasi resigned as president of the Cleveland Indians in order to take over as president and chief executive officer of Telerate Sports, a newly formed sports- information service. The Indians said that Dan O'Brien, Joe Klein, Terry Barthelmas and Greg Olson would handle the direction and day-to-day activities of the club. Bavasi, 44, joined the Indians in November 1984. Last season the team had an 84-78 record, its best since 1968, and attendance of 1.47 million, its highest since 1959. Bavasi, the son of Buzzy Bavasi, the former baseball executive, was founding president the Toronto Blue Jays and former general manager of the San Diego Padres.</p>
+        <p>SPORTS PEOPLE</p>
       </block>
     </body.content>
   </body>
